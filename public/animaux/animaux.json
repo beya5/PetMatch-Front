@@ -1,0 +1,59 @@
+{
+  "categories": [
+    {
+      "nom": "Chat",
+      "animaux": [
+        {
+          "id": 1,
+          "nom": "Milo",
+          "race": "Siamois",
+          "age": "2 ans",
+          "sexe": "Mâle",
+          "image": "assets/images/cats/milo.jpg"
+        },
+        {
+          "id": 2,
+          "nom": "Luna",
+          "race": "Persan",
+          "age": "3 ans",
+          "sexe": "Femelle",
+          "image": "assets/images/cats/luna.jpg"
+        }
+      ]
+    },
+    {
+      "nom": "Chien",
+      "animaux": [
+        {
+          "id": 3,
+          "nom": "Rocky",
+          "race": "Labrador",
+          "age": "4 ans",
+          "sexe": "Mâle",
+          "image": "assets/images/dogs/rocky.jpg"
+        },
+        {
+          "id": 4,
+          "nom": "Bella",
+          "race": "Berger Allemand",
+          "age": "2 ans",
+          "sexe": "Femelle",
+          "image": "assets/images/dogs/bella.jpg"
+        }
+      ]
+    },
+    {
+      "nom": "Lapin",
+      "animaux": [
+        {
+          "id": 5,
+          "nom": "Fluffy",
+          "race": "Lapin nain",
+          "age": "1 an",
+          "sexe": "Femelle",
+          "image": "assets/images/rabbits/fluffy.jpg"
+        }
+      ]
+    }
+  ]
+}
