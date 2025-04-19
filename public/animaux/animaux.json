@@ -1,59 +1,74 @@
 {
   "categories": [
     {
+      "id": 1,
       "nom": "Chat",
-      "animaux": [
-        {
-          "id": 1,
-          "nom": "Milo",
-          "race": "Siamois",
-          "age": "2 ans",
-          "sexe": "Mâle",
-          "image": "assets/images/cats/milo.jpg"
-        },
-        {
-          "id": 2,
-          "nom": "Luna",
-          "race": "Persan",
-          "age": "3 ans",
-          "sexe": "Femelle",
-          "image": "assets/images/cats/luna.jpg"
-        }
-      ]
+      "description": "Adoptez un chat affectueux et donnez-lui un foyer chaleureux.",
+      "image": "chat.jpg"
     },
     {
+      "id": 2,
       "nom": "Chien",
-      "animaux": [
-        {
-          "id": 3,
-          "nom": "Rocky",
-          "race": "Labrador",
-          "age": "4 ans",
-          "sexe": "Mâle",
-          "image": "assets/images/dogs/rocky.jpg"
-        },
-        {
-          "id": 4,
-          "nom": "Bella",
-          "race": "Berger Allemand",
-          "age": "2 ans",
-          "sexe": "Femelle",
-          "image": "assets/images/dogs/bella.jpg"
-        }
-      ]
+      "description": "Trouvez votre compagnon canin idéal pour partager de joyeuses aventures.",
+      "image": "chien.jpg"
     },
     {
+      "id": 3,
       "nom": "Lapin",
-      "animaux": [
-        {
-          "id": 5,
-          "nom": "Fluffy",
-          "race": "Lapin nain",
-          "age": "1 an",
-          "sexe": "Femelle",
-          "image": "assets/images/rabbits/fluffy.jpg"
-        }
-      ]
+      "description": "Accueillez un lapin doux et joueur dans votre famille.",
+      "image": "lapin.jpg"
+    },{
+      "id":4,
+      "nom":"Chèvre",
+      "description":"Adoptez une chèvre curieuse et pleine de tendresse",
+      "image":"Chèvre.jpg"
+    }
+  ],
+  "animaux": [
+    {
+      "id": 1,
+      "nom": "Milo",
+      "race": "Siamois",
+      "age": "2 ans",
+      "sexe": "Mâle",
+      "image": "assets/images/cats/milo.jpg",
+      "categorie_id": 1
+    },
+    {
+      "id": 2,
+      "nom": "Luna",
+      "race": "Persan",
+      "age": "3 ans",
+      "sexe": "Femelle",
+      "image": "assets/images/cats/luna.jpg",
+      "categorie_id": 1
+    },
+    {
+      "id": 3,
+      "nom": "Rocky",
+      "race": "Labrador",
+      "age": "4 ans",
+      "sexe": "Mâle",
+      "image": "assets/images/dogs/rocky.jpg",
+      "categorie_id": 2
+    },
+    {
+      "id": 4,
+      "nom": "Bella",
+      "race": "Berger Allemand",
+      "age": "2 ans",
+      "sexe": "Femelle",
+      "image": "assets/images/dogs/bella.jpg",
+      "categorie_id": 2
+    },
+    {
+      "id": 5,
+      "nom": "Fluffy",
+      "race": "Lapin nain",
+      "age": "1 an",
+      "sexe": "Femelle",
+      "image": "assets/images/rabbits/fluffy.jpg",
+      "categorie_id": 3
     }
   ]
 }

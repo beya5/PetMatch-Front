@@ -1,3 +1,4 @@
+<div style="position:relative;height:2300px;">
 <section class="video-section">
   <video autoplay muted loop class="background-video">
     <source src="chien.mp4" type="video/mp4" />
@@ -9,3 +10,92 @@
     <button>Adopter un animal</button>
   </div>
 </section>
+
+<div class="container">
+  <h2 class="title">Nos Animaux Disponible</h2>
+  <div class="cards">
+    @for(categ of ListeCateg;track $index){
+    <div class="card">
+      <img [src]="categ.image" alt="Chien">
+      <h3>{{categ.nom}}</h3>
+      <p>{{categ.description}}</p>
+      <button>Voir les {{categ.nom}}s</button>
+    </div>
+}
+  </div>
+
+  <section class="adoption-intro">
+    <h2 class="adoption-title">Nos engagements pour une adoption éthique et responsable</h2>
+    <p class="adoption-subtitle">
+      Informez-vous sur les conditions, démarches et types d’adoption proposées par notre refuge.
+    </p>
+  </section>
+
+
+<div class="adoption-section">
+
+    <div class="adoption-card">
+      <div class="card-content">
+        <img class="card-image" src="pexels-cottonbro-6568500.jpg" alt="Logo - Conditions d'adoption">
+        <div class="card-title">Les conditions d'adoption</div>
+        <div class="card-hover-text">
+          <p>
+            Adopter, c’est offrir une seconde chance à un animal. Il faut simplement être majeur, prêt à l’accueillir avec amour,
+             et contribuer aux frais liés à ses soins. Chaque adoption est un engagement du cœur, pour une belle histoire de vie partagée.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="adoption-card">
+      <div class="card-content">
+        <img class="card-image" src="pexels-cottonbro-6568500.jpg" alt="Logo - Parcours d'adoption">
+        <div class="card-title">Le parcours d'adoption</div>
+        <div class="card-hover-text">
+          <p>
+            Adopter, c’est aussi se découvrir. Racontez-nous votre mode de vie, vos envies,
+            et ce que vous attendez de votre futur compagnon. Grâce au formulaire, on pourra trouver l’animal qui vous correspond vraiment. 💛
+
+
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="adoption-card">
+      <div class="card-content">
+        <img class="card-image" src="pexels-cottonbro-6568500.jpg" alt="Logo - Conditions d'adoption">
+        <div class="card-title">Le formulaire adoptant</div>
+        <div class="card-hover-text">
+          <p>
+            Un outil simple pour mieux vous connaître, cerner vos attentes et faire le bon match avec l’animal. Remplissez-le dès maintenant !
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="adoption-card">
+      <div class="card-content">
+        <img class="card-image" src="pexels-cottonbro-6568500.jpg" alt="Logo - Conditions d'adoption">
+        <div class="card-title">Suivi et conseils après adoption</div>
+        <div class="card-hover-text">
+          <p>
+            L’adoption ne s’arrête pas le jour du départ. Nous restons à vos côtés pour répondre à vos questions et accompagner votre duo. 💬
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+
+</div>
+
+
