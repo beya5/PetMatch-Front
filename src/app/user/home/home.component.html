@@ -11,15 +11,15 @@
   </div>
 </section>
 
-<div class="container">
+<div class="c1">
   <h2 class="title">Nos Animaux Disponible</h2>
   <div class="cards">
     @for(categ of ListeCateg;track $index){
     <div class="card">
       <img [src]="categ.image" alt="Chien">
-      <h3>{{categ.nom}}</h3>
-      <p>{{categ.description}}</p>
-      <button>Voir les {{categ.nom}}s</button>
+      <h3>{{categ.type}}</h3>
+      <!-- <p>{{categ.description}}</p> -->
+      <button type="button" (click)="navigateToList(categ.type)">Voir les {{categ.type}}s</button>
     </div>
 }
   </div>

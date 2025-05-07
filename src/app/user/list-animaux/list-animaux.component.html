@@ -1,0 +1,63 @@
+<main >
+  <h1>Nos Chats Disponibles</h1>
+
+  <div class="search-filter-container">
+
+    <div class="d-flex">
+      <input type="text" class="form-control form-control-sm" placeholder="Entrez la race de l'animal..." #recherche style="width: 600px;">
+      <button class="btn btn-sm btn-outline-secondary ms-1"   type="button" (click)="chercher(recherche.value)">
+        <i class="fas fa-search"></i>
+      </button >
+    </div>
+    <div class="filter-group">
+      <select #ageSelect (change)="filtrerParAge(ageSelect.value)">
+        <option value="Tous les âges">Tous les âges</option>
+        <option value="0-1">Chaton (0-1 an)</option>
+        <option value="1-3">Jeune (1-3 ans)</option>
+        <option value="3-10">Adulte (3-10 ans)</option>
+        <option value="+10">Sénior (+10 ans)</option>
+      </select>
+
+      <select  #sexeSelect (change)="filtrerParSexe(sexeSelect.value)">
+        <option value="">Tous les sexes</option>
+        <option value="Mâle">Mâle</option>
+        <option value="Femelle">Femelle</option>
+      </select>
+
+      <select #caractereSelect (change)="filtrerParCaractere(caractereSelect.value)">
+        <option value="">Tous les caractères</option>
+        <option value="calm">Calme</option>
+        <option value="playful">Joueur</option>
+        <option value="affectionate">Câlin</option>
+        <option value="independent">Indépendant</option>
+      </select>
+    </div>
+
+
+  </div>
+
+  <div class="animal-list">
+    @if(ListeAnimaux.length == 0){
+      <div class="no-results">
+        <h2>Aucun animal trouvé</h2>
+        <p>Essayez de modifier vos critères de recherche.</p>
+      </div>
+    }
+    @for(animal of ListeAnimaux ;track $index){
+    <div class="animal-card">
+      <span class="badge">{{animal.statutAdoption}}</span>
+      <img src="chat.jpg" alt="Chat 3" />
+      <h2>{{animal.nom}}</h2>
+      <div class="details">
+        <span><i class="fas fa-mars"></i> {{animal.sexe}}</span>
+        <span><i class="fas fa-birthday-cake"></i> {{animal.age}} </span>
+      </div>
+      <p>{{animal.description}}</p>
+      <button type="button" (click)="details(animal.id)">En savoir plus</button>
+    </div>
+}
+
+  </div>
+
+
+</main>
