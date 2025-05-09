@@ -27,11 +27,11 @@
                   </div>
                   <div>
                       <i class="fas fa-ruler me-1"></i>
-                      <span>50 cm</span>
+                      <span>{{animal.taille}}</span>
                   </div>
                   <div>
                       <i class="fas fa-weight me-1"></i>
-                      <span>4.2 kg</span>
+                      <span>{{animal.poids}}</span>
                   </div>
               </div>
 
@@ -105,7 +105,7 @@
 
 
 
-              <button class="btn btn-primary btn-adopt">
+              <button class="btn btn-primary btn-adopt" (click)="adoptAnimal(animal.id)">
                   <i class="fas fa-heart me-2"></i>Adopter maintenant
               </button>
 

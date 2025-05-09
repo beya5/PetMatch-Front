@@ -3,8 +3,15 @@
     <img src="logo.png" alt="logo"  style=" width: 150px;" >
   </div>
   <nav>
-    <a href="#">Accueil</a>
+    <a routerLink="/home">Accueil</a>
     <a href="#">Animaux</a>
     <a href="#">Contact</a>
+    @if(!isLoggedIn){
+    <a routerLink="/auth/login">Se connecter</a>
+    }
+    @else{
+    <a routerLink="/home" (click)="deconnecter()">Déconnexion</a>
+
+    }
   </nav>
 </div>

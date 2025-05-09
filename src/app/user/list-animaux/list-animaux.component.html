@@ -46,7 +46,7 @@
     @for(animal of ListeAnimaux ;track $index){
     <div class="animal-card">
       <span class="badge">{{animal.statutAdoption}}</span>
-      <img src="chat.jpg" alt="Chat 3" />
+      <img [src]="animal.photos" alt="Chat 3" />
       <h2>{{animal.nom}}</h2>
       <div class="details">
         <span><i class="fas fa-mars"></i> {{animal.sexe}}</span>

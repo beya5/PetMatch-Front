@@ -1,17 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '../../user.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule,ReactiveFormsModule],
+  imports: [FormsModule,ReactiveFormsModule,RouterLink],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   loginForm!: FormGroup ;
   readonly fb: FormBuilder = inject(FormBuilder)
+  UserId!:number;
+  activatedRoute:ActivatedRoute=inject(ActivatedRoute);
  service:UserService=inject(UserService)
     router: Router=inject(Router);
 
@@ -24,27 +26,48 @@ export class LoginComponent {
         )
       }
 
-  onSubmit() {
-    if (this.loginForm.valid) {
-      const email = this.loginForm.value.email;
-      const password = this.loginForm.value.password;
-
-      this.service.connecter(email, password).subscribe({
-        next: (data) => {
-          if (data) {
-            console.log('Connexion réussie !');
-            this.router.navigate(['/home']);
-          } else {
-            console.log('Identifiants invalides !');
-          }
-        },
-        error: (err) => {
-          console.error('Erreur lors de la connexion :', err);
+      onSubmit() {
+        if (!this.loginForm.valid) {
+          console.log('Formulaire invalide !');
+          return;
         }
-      });
-    }
-  else {
-      console.log('Formulaire invalide !');
-    }
-}
+
+        const { email, password } = this.loginForm.value;
+
+        this.service.connecter(email, password).subscribe({
+          next: (data) => {
+            if (!data?.length) {
+              console.log('Identifiants invalides !');
+              return;
+            }
+
+            console.log('Connexion réussie !', data);
+            this.UserId = data[0].id;
+            this.redirectAfterLogin();
+          },
+          error: (err) => console.error('Erreur lors de la connexion :', err)
+        });
+      }
+
+      private redirectAfterLogin() {
+        const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
+        const animalId = this.activatedRoute.snapshot.queryParams['animalId'];
+
+        if (!returnUrl) {
+          this.router.navigate(['/home', this.UserId]);
+          return;
+        }
+
+        // Cas spécifique pour le formulaire
+        if (returnUrl.includes('formulaires')) {
+          const navExtras = animalId ? { queryParams: { animalId } } : {};
+          this.router.navigate(['/home', this.UserId, 'formulaires'], navExtras);
+          return;
+        }
+
+        // Redirection générale
+        this.router.navigateByUrl(returnUrl).catch(() => {
+          this.router.navigate(['/home', this.UserId]); // Fallback
+        });
+      }
 }

@@ -1,0 +1,137 @@
+<div class="adoption-form-container">
+  <div class="form-header">
+    <h1><i class="fas fa-paw"></i> Formulaire d'adoption PetMatch</h1>
+    <p>Merci de remplir ce formulaire pour nous aider à trouver le compagnon idéal pour vous</p>
+  </div>
+
+  <form [formGroup]="adoptionForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-section">
+      <h2><i class="fas fa-home"></i> Situation familiale</h2>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Type de logement</label>
+        <select class="form-select" formControlName="logement" required>
+          <option value="">Sélectionnez...</option>
+          <option value="house">Maison</option>
+          <option value="apartment">Appartement</option>
+          <option value="farm">Ferme</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Vous êtes</label>
+        <select class="form-select" formControlName="statut" required>
+          <option value="">Sélectionnez...</option>
+          <option value="owner">Propriétaire</option>
+          <option value="tenant">Locataire</option>
+          <option value="living_with_family">Chez des parents</option>
+          <option value="other">Autre</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Surface du logement (m²)</label>
+        <input type="number" class="form-control" formControlName="surface" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Composition du foyer</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="children" formControlName="children">
+          <label class="form-check-label" for="children">Enfant(s)</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="seniors" formControlName="seniors">
+          <label class="form-check-label" for="seniors">Personne(s) âgée(s)</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2><i class="fas fa-paw"></i> Expérience avec les animaux</h2>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Nombre d'animaux actuels</label>
+        <input type="number" class="form-control" formControlName="animaux" min="0" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Expérience avec les animaux</label>
+        <select class="form-select" formControlName="experience" required>
+          <option value="">Sélectionnez...</option>
+          <option value="none">Aucune expérience</option>
+          <option value="little">Peu d'expérience</option>
+          <option value="moderate">Expérience modérée</option>
+          <option value="extensive">Beaucoup d'expérience</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Avez-vous déjà adopté un animal ?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="dejaAdopte" id="previousAdoptionYes" value="yes" formControlName="dejaAdopte">
+          <label class="form-check-label" for="previousAdoptionYes">Oui</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="dejaAdopte" id="previousAdoptionNo" value="no" formControlName="dejaAdopte">
+          <label class="form-check-label" for="previousAdoptionNo">Non</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h2><i class="fas fa-graduation-cap"></i> Connaissances et engagement</h2>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Connaissance des coûts associés</label>
+        <select class="form-select" formControlName="couts" required>
+          <option value="">Sélectionnez...</option>
+          <option value="excellent">Excellente connaissance</option>
+          <option value="good">Bonne connaissance</option>
+          <option value="limited">Connaissance limitée</option>
+          <option value="none">Aucune connaissance</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Engagement à long terme</label>
+        <select class="form-select" formControlName="engagement" required>
+          <option value="">Sélectionnez...</option>
+          <option value="fully_committed">Totalement engagé</option>
+          <option value="mostly_committed">Plutôt engagé</option>
+          <option value="unsure">Pas certain</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label required-field">Temps disponible par jour</label>
+        <select class="form-select" formControlName="temps" required>
+          <option value="">Sélectionnez...</option>
+          <option value="1h">Moins de 1h</option>
+          <option value="1-2h">1-2 heures</option>
+          <option value="2-4h">2-4 heures</option>
+          <option value="4h+">Plus de 4h</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Qui s'occupera principalement de l'animal ?</label>
+        <input type="text" class="form-control" formControlName="responsable">
+      </div>
+    </div>
+
+    <div class="form-section">
+      <div class="mb-3">
+        <label class="form-label">Pourquoi souhaitez-vous adopter un animal ?</label>
+        <textarea class="form-control" formControlName="motivation"></textarea>
+      </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-submit">
+      <i class="fas fa-paper-plane"></i> Soumettre ma demande
+    </button>
+  </form>
+</div>

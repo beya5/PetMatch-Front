@@ -51,5 +51,12 @@ filtrerParCaractere(motCle: string) {
 
 
 details(id: number) {
-this.router.navigate(['detail', id]); }
+  const idUser = this.activatedRoute.snapshot.paramMap.get('idUser');
+
+  if (idUser) {
+    this.router.navigate(['/home', idUser, 'detail', id]);
+  } else {
+    this.router.navigate(['detail', id]);
+  }
+}
 }

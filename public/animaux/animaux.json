@@ -1,27 +1,86 @@
 {
   "adoptants": [
     {
-      "id": 1,
+      "id": "1",
       "nom": "Ben Ali",
       "prenom": "Sami",
       "email": "sami.benali@example.com",
       "mdp": "hashed123",
+      "role": "adoptant"
+    },
+    {
+      "id": "d81e",
+      "nom": "khazri",
+      "prenom": "syrine",
+      "email": "syrine.khazri@gmail.com",
+      "mdp": "123456",
+      "role": "adoptant"
+    },
+    {
+      "id": "0f33",
+      "nom": "beya",
+      "prenom": "bbibi",
+      "email": "beya.bibi@gmail.com",
+      "mdp": "123456789",
       "role": "adoptant"
     }
   ],
   "questionnairesAdoptant": [
     {
       "adoptantId": 1,
-      "environnement": "Maison avec jardin",
-      "nombreAnimauxActuel": 0,
-      "experienceAnimaux": true,
-      "connaissanceCouts": true,
-      "adoptionLongTerme": true
+      "id": "818a",
+      "logement": "farm",
+      "statut": "living_with_family",
+      "surface": 1000,
+      "children": false,
+      "seniors": true,
+      "animaux": 10,
+      "experience": "extensive",
+      "dejaAdopte": "yes",
+      "couts": "excellent",
+      "engagement": "fully_committed",
+      "temps": "4h+",
+      "responsable": "mes parent",
+      "motivation": "hkk"
+    },
+    {
+      "id": "4f3c",
+      "logement": "farm",
+      "statut": "tenant",
+      "surface": 5000,
+      "children": true,
+      "seniors": false,
+      "animaux": 5,
+      "experience": "extensive",
+      "dejaAdopte": "yes",
+      "couts": "excellent",
+      "engagement": "mostly_committed",
+      "temps": "2-4h",
+      "responsable": "moi",
+      "motivation": "hkk",
+      "adoptantId": "d81e"
+    },
+    {
+      "id": "226c",
+      "logement": "house",
+      "statut": "tenant",
+      "surface": 100,
+      "children": true,
+      "seniors": false,
+      "animaux": 1,
+      "experience": "extensive",
+      "dejaAdopte": "yes",
+      "couts": "excellent",
+      "engagement": "unsure",
+      "temps": "1-2h",
+      "responsable": "moi",
+      "motivation": "hkk",
+      "adoptantId": "d81e"
     }
   ],
-  "ficheAnimaux":[
+  "ficheAnimaux": [
     {
-      "id": 101,
+      "id": "101",
       "nom": "Bella",
       "type": "Chien",
       "race": "Labrador",
@@ -29,7 +88,7 @@
       "sexe": "Femelle",
       "taille": "60 cm",
       "poids": "25 kg",
-      "photos":"Luna.jpeg",
+      "photos": "Luna.jpeg",
       "description": "Joueuse, idéale pour famille avec enfants",
       "statutAdoption": "Disponible",
       "historique": {
@@ -44,7 +103,7 @@
       }
     },
     {
-      "id": 102,
+      "id": "102",
       "nom": "Max",
       "type": "Chien",
       "race": "Berger Allemand",
@@ -67,7 +126,7 @@
       }
     },
     {
-      "id": 103,
+      "id": "103",
       "nom": "Mimi",
       "type": "Chat",
       "race": "Européen",
@@ -90,7 +149,7 @@
       }
     },
     {
-      "id": 104,
+      "id": "104",
       "nom": "Milo",
       "type": "Chat",
       "race": "Maine Coon",
@@ -113,7 +172,7 @@
       }
     },
     {
-      "id": 105,
+      "id": "105",
       "nom": "Luna",
       "type": "Chien",
       "race": "Golden Retriever",
@@ -136,7 +195,7 @@
       }
     },
     {
-      "id": 106,
+      "id": "106",
       "nom": "Simba",
       "type": "Chat",
       "race": "Siamois",
@@ -159,7 +218,7 @@
       }
     },
     {
-      "id": 107,
+      "id": "107",
       "nom": "Rocky",
       "type": "Chien",
       "race": "Rottweiler",
@@ -182,7 +241,7 @@
       }
     },
     {
-      "id": 108,
+      "id": "108",
       "nom": "Nala",
       "type": "Chat",
       "race": "Persan",
@@ -207,7 +266,7 @@
   ],
   "publications": [
     {
-      "id": 201,
+      "id": "201",
       "ficheAnimalId": 101,
       "typeNotification": "Annonce adoption",
       "contenu": "Bella cherche une famille",
@@ -215,7 +274,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 202,
+      "id": "202",
       "ficheAnimalId": 102,
       "typeNotification": "Annonce adoption",
       "contenu": "Max attend un maître sportif",
@@ -223,7 +282,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 203,
+      "id": "203",
       "ficheAnimalId": 103,
       "typeNotification": "Annonce adoption",
       "contenu": "Mimi, chatte douce à adopter",
@@ -231,7 +290,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 204,
+      "id": "204",
       "ficheAnimalId": 104,
       "typeNotification": "Annonce adoption",
       "contenu": "Tigrou, jeune Maine Coon curieux",
@@ -239,7 +298,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 205,
+      "id": "205",
       "ficheAnimalId": 105,
       "typeNotification": "Annonce adoption",
       "contenu": "Luna, une chienne douce et fidèle à adopter",
@@ -247,7 +306,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 206,
+      "id": "206",
       "ficheAnimalId": 106,
       "typeNotification": "Annonce adoption",
       "contenu": "Simba, un siamois bavard et mignon",
@@ -255,7 +314,7 @@
       "statut": "Publiée"
     },
     {
-      "id": 207,
+      "id": "207",
       "ficheAnimalId": 107,
       "typeNotification": "Annonce adoption",
       "contenu": "Rocky, puissant et fidèle, attend sa famille",
@@ -263,12 +322,49 @@
       "statut": "Publiée"
     },
     {
-      "id": 208,
+      "id": "208",
       "ficheAnimalId": 108,
       "typeNotification": "Annonce adoption",
       "contenu": "Nala, persane douce, idéale en appartement",
       "dateEnvoi": "2025-05-04",
       "statut": "Publiée"
+    }
+  ],
+  "DemandeAdoption": [
+    {
+      "id": "301",
+      "adoptantId": 1,
+      "ficheAnimalId": 101,
+      "dateDemande": "2025-04-15",
+      "statut": "En attente"
+    },
+    {
+      "id": "302",
+      "adoptantId": 1,
+      "ficheAnimalId": 102,
+      "dateDemande": "2025-04-20",
+      "statut": "Acceptée"
+    },
+    {
+      "id": "cf9c",
+      "adoptantId": "d81e",
+      "ficheAnimalId": 103,
+      "dateDemande": "2025-05-09",
+      "statut": "En attente"
+    },
+    {
+      "id": "cf9c",
+      "adoptantId": "d81e",
+      "ficheAnimalId": 107,
+      "dateDemande": "2025-05-09",
+      "statut": "Refusée"
+    },
+    {
+      "id": "302",
+      "adoptantId": "d81e",
+      "ficheAnimalId": 102,
+      "dateDemande": "2025-04-20",
+      "statut": "Acceptée"
     }
   ]
 }

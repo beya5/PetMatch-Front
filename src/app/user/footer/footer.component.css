@@ -1,50 +1,104 @@
-/* CSS */
-.footer {
-  background-color: #7d7d7d;
-  color: #fff;
+.simple-footer {
+  background-color:  rgba(30, 30, 30, 0.632);;
+  color: white;
   padding: 40px 20px 20px;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+.footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+  padding-bottom: 30px;
 }
 
-.footer-section {
-  flex: 1 1 250px;
+.footer-brand {
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-section h3 {
-  color: #ffd700;
-  font-size: 1.2em;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #FF914D;
+}
+
+.slogan {
+  color: rgba(255,255,255,0.8);
+  font-style: italic;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.link-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-group h3 {
+  color: #FF914D;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.link-group a {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 10px;
+  transition: color 0.3s;
+}
+
+.link-group a:hover {
+  color: #FF914D;
+}
+
+.footer-contact h3 {
+  color: #FF914D;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.footer-contact p {
   margin-bottom: 10px;
 }
 
-.footer-section p {
-  margin: 5px 0;
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .social-icons a {
-  margin-right: 10px;
-  display: inline-block;
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s;
 }
 
-.social-icons img {
-  width: 30px;
-  height: 30px;
-  filter: brightness(0) invert(1); /* white icons */
+.social-icons a:hover {
+  color: #FF914D;
 }
 
 .footer-bottom {
   text-align: center;
-  margin-top: 30px;
-  font-size: 0.9em;
-  border-top: 1px solid #ccc;
-  padding-top: 15px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
 }
 
+@media (max-width: 768px) {
+  .footer-links {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-content {
+    gap: 30px;
+  }
+}

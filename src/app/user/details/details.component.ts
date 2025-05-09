@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrl: './details.component.css'
 })
 export class DetailsComponent {
+
 animal!:FicheAnimal;
 service:AnimalServiceService=inject(AnimalServiceService);
 activatedRoute:ActivatedRoute=inject(ActivatedRoute);
@@ -24,5 +25,22 @@ ngOnInit(): void {
     }
   });
 
+}
+
+adoptAnimal(animalId: number) {
+  const idUser = this.activatedRoute.snapshot.paramMap.get('idUser');
+  if (idUser) {
+    this.route.navigate(['/home', idUser, 'formulaires'], {
+      queryParams: { animalId: animalId }
+    });
+  } else {
+    // Ajoutez le idUser dans l'URL de retour si nécessaire
+    this.route.navigate(['/auth/login'], {
+      queryParams: {
+        returnUrl: `/formulaires?animalId=${animalId}`,
+        animalId: animalId // Optionnel: doublon pour certains systèmes
+      }
+    });
+  }
 }
 }

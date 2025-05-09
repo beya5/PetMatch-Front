@@ -1,0 +1,42 @@
+ .card {
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge {
+      font-size: 0.9rem;
+    }
+
+    .header-title {
+      font-weight: bold;
+      font-size: 2.6rem;
+      color: #ff7f50;
+    }
+
+    .subtitle {
+      color: #6c757d;
+    }
+
+    .pet-image {
+      width: 90px;
+      height: 90px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #ffc107;
+    }
+
+    .modal-content {
+      border-radius: 1rem;
+    }
+
+    .btn-outline-danger {
+      transition: 0.2s;
+    }
+
+    .btn-outline-danger:hover {
+      background-color: #dc3545;
+      color: #fff;
+    }

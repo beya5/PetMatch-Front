@@ -1,6 +1,6 @@
 
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimalServiceService } from '../../animal-service.service';
 @Component({
   selector: 'app-home',
@@ -13,7 +13,8 @@ export class HomeComponent {
 
   router:Router=inject(Router);
   service:AnimalServiceService=inject(AnimalServiceService);
-  ListeCateg:any[]=[]
+  ListeCateg:any[]=[];
+  activatedRoute:ActivatedRoute=inject(ActivatedRoute);
   ngOnInit(): void {
 
 this.service.getTypesAnimaux().subscribe(data=>{
@@ -23,6 +24,12 @@ this.service.getTypesAnimaux().subscribe(data=>{
   }
 
   navigateToList(type: string) {
-    this.router.navigate(['/list', type]);
+    const idUser = this.activatedRoute.snapshot.paramMap.get('idUser');
+    if (idUser) {
+      this.router.navigate(['/home', idUser, 'list', type]);
+    } else {
+      this.router.navigate(['/list', type]);
+    }
   }
+
 }
