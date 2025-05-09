@@ -45,7 +45,6 @@ onSubmit(): void {
     this.service.saveAdoptant(formData).subscribe({
       next: () => {
         alert("Demande envoyée avec succès !");
-        this.router.navigate(['/home']);
       },
       error: (err) => {
         console.error('Erreur lors de la soumission', err);
