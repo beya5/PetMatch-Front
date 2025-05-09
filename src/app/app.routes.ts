@@ -4,6 +4,8 @@ import { LoginComponent } from './auth/login/login.component';
 import { RegisterComponent } from './auth/register/register.component';
 import { ResetPasswordComponent } from './auth/reset-password/reset-password.component';
 import { HomeComponent } from './user/home/home.component';
+import { ListAnimauxComponent } from './user/list-animaux/list-animaux.component';
+import { DetailsComponent } from './user/details/details.component';
 
 export const routes: Routes = [
     {
@@ -15,7 +17,10 @@ export const routes: Routes = [
           { path: 'reset-password', component: ResetPasswordComponent }
         ]
       },
-    // { path:'', redirectTo: '/auth', pathMatch:'full'},
-    {path:"",title:"home",component:HomeComponent}
+      { path:'list/:type',title:'listAnimaux', component: ListAnimauxComponent },
+      { path:'detail/:id',title:'detail', component: DetailsComponent },
+
+    {path:"home",title:"home",component:HomeComponent},
+    { path:'', redirectTo: 'home', pathMatch:'full'}
 
 ];

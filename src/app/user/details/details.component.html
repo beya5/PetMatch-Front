@@ -1,0 +1,115 @@
+<div class="animal-container" >
+  <div class="row">
+      <div class="col-lg-7 p-0">
+          <div class="animal-gallery">
+
+              <img [src]="animal.photos" alt="Chat à adopter" class="main-image" id="mainImage">
+          </div>
+      </div>
+
+      <div class="col-lg-5">
+          <div class="animal-details">
+              <h1 class="animal-title">{{animal.nom}}</h1>
+              <span class="badge  mb-3" style="background-color: #6c7556;;">{{animal.statutAdoption}}</span>
+
+              <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+                  <div>
+                      <i class="fas fa-venus-mars me-1"></i>
+                      <span>{{animal.sexe}}</span>
+                  </div>
+                  <div>
+                      <i class="fas fa-birthday-cake me-1"></i>
+                      <span>{{animal.age}}</span>
+                  </div>
+                  <div>
+                      <i class="fas fa-paw me-1"></i>
+                      <span>{{animal.race}}</span>
+                  </div>
+                  <div>
+                      <i class="fas fa-ruler me-1"></i>
+                      <span>50 cm</span>
+                  </div>
+                  <div>
+                      <i class="fas fa-weight me-1"></i>
+                      <span>4.2 kg</span>
+                  </div>
+              </div>
+
+              <div class="detail-section">
+                  <h4 class="section-title"><i class="fas fa-info-circle me-2"></i>description</h4>
+                  <p class="description">
+                        {{animal.description}}
+                  </p>
+              </div>
+
+
+
+              <div class="detail-section">
+                  <h4 class="section-title"><i class="fas fa-bookmark me-2"></i>Historique</h4>
+
+                      <div class="detail-item">
+                          <i class="fas fa-calendar-day"></i>
+                          <span>Arrivé le {{animal.historique.dateArrivee}}</span>
+                      </div>
+                      <div class="detail-item">
+                          <i class="fas fa-map-marker-alt"></i>
+                          <span>Trouvé à{{animal.historique.lieu}}</span>
+                      </div>
+                      <div class="detail-item">
+                          <i class="fas fa-home"></i>
+                          <span>En refuge depuis {{animal.historique.tempsRefuge}}</span>
+                      </div>
+                  </div>
+              </div>
+
+              <div class="detail-section" style="position: relative; left:20px;">
+                  <h4 class="section-title"><i class="fas fa-heartbeat me-2"></i>Santé</h4>
+                  <div class="info-grid">
+                      <div class="detail-item">
+                          <i class="fas fa-syringe"></i>
+                          <span>{{animal.sante.vaccin}}</span>
+                      </div>
+                      @if(animal.sante.sterilise){
+                      <div class="detail-item">
+                          <i class="fas fa-cut"></i>
+                          <span>Stérilisé</span>
+                      </div>
+                            }
+
+                      <div class="detail-item">
+                          <i class="fas fa-teeth"></i>
+                          <span>{{animal.sante.dents}}</span>
+                      </div>
+
+                  </div>
+              </div>
+
+              <div class="detail-section" style="position: relative; left:20px;">
+                  <h4 class="section-title"><i class="fas fa-home-heart me-2"></i>Environnement idéal</h4>
+                  <div class="info-grid">
+                      <div class="detail-item">
+                          <i class="fas fa-home"></i>
+                          <span>Appartement ou maison</span>
+                      </div>
+                      <div class="detail-item">
+                          <i class="fas fa-child"></i>
+                          <span>Enfants > 6 ans</span>
+                      </div>
+                      <div class="detail-item">
+                          <i class="fas fa-cat"></i>
+                          <span>Seul ou avec autre {{animal.type}}</span>
+                      </div>
+
+                  </div>
+              </div>
+
+
+
+              <button class="btn btn-primary btn-adopt">
+                  <i class="fas fa-heart me-2"></i>Adopter maintenant
+              </button>
+
+          </div>
+      </div>
+  </div>
+

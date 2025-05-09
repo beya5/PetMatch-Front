@@ -1,59 +1,274 @@
 {
-  "categories": [
+  "adoptants": [
     {
-      "nom": "Chat",
-      "animaux": [
-        {
-          "id": 1,
-          "nom": "Milo",
-          "race": "Siamois",
-          "age": "2 ans",
-          "sexe": "Mâle",
-          "image": "assets/images/cats/milo.jpg"
-        },
-        {
-          "id": 2,
-          "nom": "Luna",
-          "race": "Persan",
-          "age": "3 ans",
-          "sexe": "Femelle",
-          "image": "assets/images/cats/luna.jpg"
-        }
-      ]
+      "id": 1,
+      "nom": "Ben Ali",
+      "prenom": "Sami",
+      "email": "sami.benali@example.com",
+      "mdp": "hashed123",
+      "role": "adoptant"
+    }
+  ],
+  "questionnairesAdoptant": [
+    {
+      "adoptantId": 1,
+      "environnement": "Maison avec jardin",
+      "nombreAnimauxActuel": 0,
+      "experienceAnimaux": true,
+      "connaissanceCouts": true,
+      "adoptionLongTerme": true
+    }
+  ],
+  "ficheAnimaux":[
+    {
+      "id": 101,
+      "nom": "Bella",
+      "type": "Chien",
+      "race": "Labrador",
+      "age": "3 ans",
+      "sexe": "Femelle",
+      "taille": "60 cm",
+      "poids": "25 kg",
+      "photos":"Luna.jpeg",
+      "description": "Joueuse, idéale pour famille avec enfants",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2024-12-01",
+        "lieu": "Lyon (69)",
+        "tempsRefuge": "5 mois"
+      },
+      "sante": {
+        "vaccin": "CHPL, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
     },
     {
-      "nom": "Chien",
-      "animaux": [
-        {
-          "id": 3,
-          "nom": "Rocky",
-          "race": "Labrador",
-          "age": "4 ans",
-          "sexe": "Mâle",
-          "image": "assets/images/dogs/rocky.jpg"
-        },
-        {
-          "id": 4,
-          "nom": "Bella",
-          "race": "Berger Allemand",
-          "age": "2 ans",
-          "sexe": "Femelle",
-          "image": "assets/images/dogs/bella.jpg"
-        }
-      ]
+      "id": 102,
+      "nom": "Max",
+      "type": "Chien",
+      "race": "Berger Allemand",
+      "age": "5 ans",
+      "sexe": "Mâle",
+      "taille": "65 cm",
+      "poids": "30 kg",
+      "photos": "Luna.jpeg",
+      "description": "Protecteur et loyal, bon gardien",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-01-10",
+        "lieu": "Nice (06)",
+        "tempsRefuge": "4 mois"
+      },
+      "sante": {
+        "vaccin": "CHPL, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
     },
     {
-      "nom": "Lapin",
-      "animaux": [
-        {
-          "id": 5,
-          "nom": "Fluffy",
-          "race": "Lapin nain",
-          "age": "1 an",
-          "sexe": "Femelle",
-          "image": "assets/images/rabbits/fluffy.jpg"
-        }
-      ]
+      "id": 103,
+      "nom": "Mimi",
+      "type": "Chat",
+      "race": "Européen",
+      "age": "2 ans",
+      "sexe": "Femelle",
+      "taille": "45 cm",
+      "poids": "3.5 kg",
+      "photos": "Luna.jpeg",
+      "description": "Très affectueuse, aime les câlins",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-02-05",
+        "lieu": "Paris (75)",
+        "tempsRefuge": "3 mois"
+      },
+      "sante": {
+        "vaccin": "FVRCP, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    },
+    {
+      "id": 104,
+      "nom": "Milo",
+      "type": "Chat",
+      "race": "Maine Coon",
+      "age": "1 an",
+      "sexe": "Mâle",
+      "taille": "55 cm",
+      "poids": "5.0 kg",
+      "photos": "Luna.jpeg",
+      "description": "Curieux et sociable",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-02-10",
+        "lieu": "Marseille (13)",
+        "tempsRefuge": "3 mois"
+      },
+      "sante": {
+        "vaccin": "FVRCP, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    },
+    {
+      "id": 105,
+      "nom": "Luna",
+      "type": "Chien",
+      "race": "Golden Retriever",
+      "age": "4 ans",
+      "sexe": "Femelle",
+      "taille": "58 cm",
+      "poids": "28 kg",
+      "photos": "Luna.jpeg",
+      "description": "Calme et obéissante, adore les enfants",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-03-01",
+        "lieu": "Toulouse (31)",
+        "tempsRefuge": "2 mois"
+      },
+      "sante": {
+        "vaccin": "CHPL, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    },
+    {
+      "id": 106,
+      "nom": "Simba",
+      "type": "Chat",
+      "race": "Siamois",
+      "age": "2 ans",
+      "sexe": "Mâle",
+      "taille": "50 cm",
+      "poids": "4.2 kg",
+      "photos": "Luna.jpeg",
+      "description": "Très bavard et joueur",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-03-05",
+        "lieu": "Paris (75)",
+        "tempsRefuge": "2 mois"
+      },
+      "sante": {
+        "vaccin": "FVRCP, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    },
+    {
+      "id": 107,
+      "nom": "Rocky",
+      "type": "Chien",
+      "race": "Rottweiler",
+      "age": "6 ans",
+      "sexe": "Mâle",
+      "taille": "68 cm",
+      "poids": "40 kg",
+      "photos": "Luna.jpeg",
+      "description": "Fort et fidèle, bon chien de garde",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-04-01",
+        "lieu": "Lille (59)",
+        "tempsRefuge": "1 mois"
+      },
+      "sante": {
+        "vaccin": "CHPL, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    },
+    {
+      "id": 108,
+      "nom": "Nala",
+      "type": "Chat",
+      "race": "Persan",
+      "age": "3 ans",
+      "sexe": "Femelle",
+      "taille": "48 cm",
+      "poids": "3.8 kg",
+      "photos": "Luna.jpeg",
+      "description": "Très douce et tranquille",
+      "statutAdoption": "Disponible",
+      "historique": {
+        "dateArrivee": "2025-04-05",
+        "lieu": "Nancy (54)",
+        "tempsRefuge": "1 mois"
+      },
+      "sante": {
+        "vaccin": "FVRCP, rage",
+        "sterilise": true,
+        "dents": "Dents saines"
+      }
+    }
+  ],
+  "publications": [
+    {
+      "id": 201,
+      "ficheAnimalId": 101,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Bella cherche une famille",
+      "dateEnvoi": "2025-04-15",
+      "statut": "Publiée"
+    },
+    {
+      "id": 202,
+      "ficheAnimalId": 102,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Max attend un maître sportif",
+      "dateEnvoi": "2025-04-20",
+      "statut": "Publiée"
+    },
+    {
+      "id": 203,
+      "ficheAnimalId": 103,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Mimi, chatte douce à adopter",
+      "dateEnvoi": "2025-04-25",
+      "statut": "Publiée"
+    },
+    {
+      "id": 204,
+      "ficheAnimalId": 104,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Tigrou, jeune Maine Coon curieux",
+      "dateEnvoi": "2025-04-28",
+      "statut": "Publiée"
+    },
+    {
+      "id": 205,
+      "ficheAnimalId": 105,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Luna, une chienne douce et fidèle à adopter",
+      "dateEnvoi": "2025-05-01",
+      "statut": "Publiée"
+    },
+    {
+      "id": 206,
+      "ficheAnimalId": 106,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Simba, un siamois bavard et mignon",
+      "dateEnvoi": "2025-05-02",
+      "statut": "Publiée"
+    },
+    {
+      "id": 207,
+      "ficheAnimalId": 107,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Rocky, puissant et fidèle, attend sa famille",
+      "dateEnvoi": "2025-05-03",
+      "statut": "Publiée"
+    },
+    {
+      "id": 208,
+      "ficheAnimalId": 108,
+      "typeNotification": "Annonce adoption",
+      "contenu": "Nala, persane douce, idéale en appartement",
+      "dateEnvoi": "2025-05-04",
+      "statut": "Publiée"
     }
   ]
 }
