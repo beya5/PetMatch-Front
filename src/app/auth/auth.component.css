@@ -1,0 +1,8 @@
+.auth-wrapper {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 2rem;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
