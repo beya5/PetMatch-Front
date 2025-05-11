@@ -1,0 +1,99 @@
+<div class="container">
+  <h1><i class="fas fa-dog"></i> Ajouter un chien</h1>
+
+  <div id="message" class="message">{{ message }}</div>
+
+  <form (ngSubmit)="onSubmit()" [formGroup]="dogForm">
+    <div class="form-grid">
+      <div class="form-group">
+        <label for="nom">Nom du chien</label>
+        <input type="text" id="nom" formControlName="nom" required>
+      </div>
+
+      <div class="form-group">
+        <label for="race">Race</label>
+        <select id="race" formControlName="race" required>
+          <option value="">Sélectionner...</option>
+          <option value="Labrador">Labrador</option>
+          <option value="Berger Allemand">Berger Allemand</option>
+          <option value="Golden Retriever">Golden Retriever</option>
+          <option value="Bulldog">Bulldog</option>
+          <option value="Autre">Autre</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Âge</label>
+        <input type="text" id="age" placeholder="Ex: 2 ans, 6 mois..." formControlName="age" required>
+      </div>
+
+      <div class="form-group">
+        <label for="sexe">Sexe</label>
+        <select id="sexe" formControlName="sexe" required>
+          <option value="">Sélectionner...</option>
+          <option value="Mâle">Mâle</option>
+          <option value="Femelle">Femelle</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="taille">Taille (au garrot)</label>
+        <input type="text" id="taille" placeholder="Ex: 55 cm" formControlName="taille" required>
+      </div>
+
+      <div class="form-group">
+        <label for="poids">Poids</label>
+        <input type="text" id="poids" placeholder="Ex: 25.5 kg" formControlName="poids" required>
+      </div>
+
+      <div class="form-group">
+        <label for="statutAdoption">Statut d'adoption</label>
+        <select id="statutAdoption" formControlName="statut" required>
+          <option value="Disponible">Disponible</option>
+          <option value="Réservé">Réservé</option>
+          <option value="Adopté">Adopté</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="dateArrivee">Date d'arrivée au refuge</label>
+        <input type="date" id="dateArrivee" formControlName="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="vaccin">Vaccins</label>
+        <input type="text" id="vaccin" placeholder="Ex: Rage, CHPPi, Leptospirose..." formControlName="vaccin">
+      </div>
+
+      <div class="form-group checkbox">
+        <input type="checkbox" id="sterilise" formControlName="sterilise">
+        <label for="sterilise">Stérilisé</label>
+      </div>
+
+      <div class="form-group">
+        <label for="dents">État des dents</label>
+        <input type="text" id="dents" placeholder="Ex: Dents saines" formControlName="dents">
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" placeholder="Tempérament, comportement, particularités..." formControlName="description"></textarea>
+      </div>
+
+     <div class="form-group">
+  <label for="photo">Lien vers la photo du chien</label>
+  <input type="text" id="photo" formControlName="photoUrl"  placeholder="photo.jpg" required>
+</div>
+
+
+      <div class="buttons">
+        <button type="button" class="btn btn-cancel" id="cancelBtn">
+          <i class="fas fa-times"></i> Annuler
+        </button>
+        <button type="submit" class="btn btn-submit">
+          <i class="fas fa-save"></i> Enregistrer le chien
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

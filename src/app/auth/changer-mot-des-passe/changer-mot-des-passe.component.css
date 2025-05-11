@@ -1,0 +1,127 @@
+.login-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 5px solid #FFD166;
+    overflow: hidden;
+    position: relative;
+    top: 150px;
+}
+
+.login-card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 3px dashed #FF914D;
+    border-radius: 25px;
+    z-index: -1;
+}
+
+.login-header {
+    background: #FF914D;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 800;
+    color: white;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.login-body {
+    padding: 30px;
+    background: white;
+}
+
+.form-control {
+    height: 50px;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    font-family: 'Comic Neue', cursive;
+    margin-bottom: 20px;
+    padding-left: 50px !important;
+}
+
+.form-control:focus {
+    border-color: #FF914D;
+    box-shadow: none;
+}
+
+.btn-login {
+    background: #4F634B;
+    border: none;
+    height: 50px;
+    font-weight: 700;
+    width: 100%;
+    border-radius: 12px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 18px;
+    transition: all 0.3s;
+    color: white;
+}
+
+.btn-login:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(79, 99, 75, 0.3);
+}
+
+.btn-login:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+}
+
+.paw-icon {
+    position: absolute;
+    font-size: 24px;
+    color: #FF914D;
+    z-index: 10;
+}
+
+.footer-links {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer-links a {
+    color: #FF914D;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.footer-links a:hover {
+    color: #4F634B;
+    text-decoration: underline;
+}
+
+.password-strength {
+    margin-top: -15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Animation pour les icônes */
+.fa-sync-alt {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

@@ -1,3 +1,4 @@
+/* Votre style original préservé avec quelques améliorations */
 .c1 {
   position: fixed;
   top: 0;
@@ -12,23 +13,35 @@
   background: rgba(30, 30, 30, 0.632);
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 999;
+  padding: 0 50px;
 }
 
+.logo {
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
 
 nav {
   display: flex;
   gap: 30px;
-  position: relative;
-  right:150px;
+  align-items: center;
 }
 
-a {
+nav a {
   color: white;
   font-size: 1.3em;
   font-weight: 500;
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
+  padding: 5px 0;
+}
+
+nav a.active {
+  color: #FFD700;
 }
 
 nav a::after {
@@ -36,12 +49,114 @@ nav a::after {
   position: absolute;
   width: 0%;
   height: 2px;
-  background-color:rgb(233,196,118);
+  background-color: rgb(233, 196, 118);
   left: 0;
   bottom: -5px;
   transition: width 0.3s ease;
 }
 
-a:hover {
+nav a:hover::after,
+nav a.active::after {
+  width: 100%;
+}
+
+nav a:hover {
   color: #FFD700;
 }
+
+.user-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.user-menu button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.user-menu button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-content {
+  position: absolute;
+  right: 0;
+  background: white;
+  min-width: 250px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 10px 0;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-info {
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 5px;
+}
+
+.user-info i {
+  font-size: 2em;
+  color: #6A8D73;
+}
+
+.user-info div {
+  line-height: 1.4;
+}
+
+.user-info strong {
+  display: block;
+  color: #333;
+}
+
+.user-info small {
+  color: #666;
+  font-size: 0.8em;
+}
+
+.dropdown-content button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 1em;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-content button:hover {
+  background: #f5f5f5;
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 8px 0;
+}
+
+.logout {
+  color: #e74c3c !important;
+}
+
+/* Ajout pour le lien de connexion */
+

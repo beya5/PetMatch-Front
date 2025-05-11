@@ -1,0 +1,70 @@
+<div class="publications-container">
+  <h1><i class="fas fa-newspaper"></i> Gestion des Publications</h1>
+
+  <!-- Filtres -->
+  <div class="filters-card">
+    <div class="filter-group">
+      <label for="animal-filter"><i class="fas fa-paw"></i> Animal :</label>
+      <select id="animal-filter" [(ngModel)]="selectedAnimal" (change)="applyFilters()">
+        <option value="">Tous les animaux</option>
+        @for (animal of animals; track animal.id) {
+          <option [value]="animal.id">
+            {{ animal.nom }} ({{ animal.race }})
+          </option>
+        }
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="adoptant-filter"><i class="fas fa-user"></i> Adoptant :</label>
+      <select id="adoptant-filter" [(ngModel)]="selectedAdoptant" (change)="applyFilters()">
+        <option value="">Tous les adoptants</option>
+        @for (adoptant of adoptants; track adoptant.id) {
+          <option [value]="adoptant.id">
+            {{ adoptant.prenom }} {{ adoptant.nom }}
+          </option>
+        }
+      </select>
+    </div>
+
+    <div class="filter-group">
+      <label for="date-filter"><i class="far fa-calendar-alt"></i> Date :</label>
+      <input type="date" id="date-filter" [(ngModel)]="selectedDate" (change)="applyFilters()">
+    </div>
+
+    <button class="btn-reset" (click)="resetFilters()">
+      <i class="fas fa-undo"></i> Réinitialiser
+    </button>
+  </div>
+
+  <!-- Liste des publications -->
+  <div class="publications-list">
+    @for (publication of filteredPublications; track publication.id) {
+      <div class="publication-card">
+        <div class="publication-header">
+          <img [src]="publication.image_url" class="animal-photo" alt="Animal">
+          <div class="publication-info">
+            <h3>{{ publication.titre}}</h3>
+            <div class="meta-info">
+              <span><i class="fas fa-user"></i> {{ publication.adoptant?.prenom }} {{ publication.adoptant?.nom }}</span>
+              <span><i class="far fa-calendar-alt"></i> {{ publication.date | date:'dd/MM/yyyy' }}</span>
+              
+            </div>
+          </div>
+        </div>
+
+        <div class="publication-content">
+          <p>{{ publication.contenu }}</p>
+          <div class="publication-type">
+            <i class="fas fa-tag"></i> {{ publication.typeNotification }}
+          </div>
+        </div>
+      </div>
+    }
+    @empty {
+      <div class="no-results">
+        <i class="far fa-folder-open"></i> Aucune publication trouvée
+      </div>
+    }
+  </div>
+</div>

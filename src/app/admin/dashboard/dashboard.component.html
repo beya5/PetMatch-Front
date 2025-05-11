@@ -1,0 +1,22 @@
+<div class="dashboard">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span>PETMATCH</span>
+            <span class="tagline">WHERE EVERY TAIL FINDS A TALE</span>
+        </div>
+        <nav>
+            <ul>
+                <li routerLink='/admin/chiens'><i class="bi bi-bone"></i> Chiens</li>
+                <li routerLink='/admin/chats'><i class="bi bi-dog"></i> Chats</li>
+                <li routerLink="/admin/Rendezvous"><i class="bi bi-calendar-event"></i> Rendez-vous</li>
+                <li routerLink="/admin/publications"><i class="bi bi-newspaper"></i> Publications</li>
+                <li type="button" (click)="deconnecter()"><i class="bi bi-box-arrow-right"></i> Déconnexion</li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

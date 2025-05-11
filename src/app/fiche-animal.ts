@@ -8,18 +8,13 @@ export class FicheAnimal {
     public sexe: string,
     public taille: string,
     public poids: string,
-    public photos: string,
+    public photoUrl: string,
     public description: string,
     public statutAdoption: string,
-    public historique: {
-      dateArrivee: string;
-      lieu: string;
-      tempsRefuge: string;
-    },
-    public sante: {
-      vaccin: string;
-      sterilise: boolean;
-      dents: string;
-    }
+    public dateArrivee: string,
+    public lieu: string,
+    public vaccin: string,
+    public sterilise: boolean,
+    public dents: string
   ) {}
 }

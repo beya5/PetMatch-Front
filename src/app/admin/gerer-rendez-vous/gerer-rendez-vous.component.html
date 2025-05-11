@@ -1,0 +1,100 @@
+<div class="container">
+  <h1><i class="fas fa-calendar-alt"></i> Gestion des Rendez-vous</h1>
+
+  <div class="filters">
+    <div class="filter-group">
+      <label for="date-filter">Filtrer par date :</label>
+      <input type="date" id="date-filter" (change)="onDateFilterChange($event)">
+    </div>
+    <div class="filter-group">
+      <label for="status-filter">Statut :</label>
+      <select id="status-filter" (change)="onStatutFilterChange($event)">
+        <option value="all">Tous</option>
+        <option value="Confirmé">Confirmé</option>
+        <option value="En attente">En attente</option>
+        <option value="Annulé">Annulé</option>
+      </select>
+    </div>
+    <button id="add-btn" (click)="afficher()"><i class="fas fa-plus"></i> Nouveau RDV</button>
+  </div>
+
+  <div class="rdv-list">
+    <div class="rdv-header">
+      <div>Date/Heure</div>
+      <div>Animal</div>
+      <div>Adoptant</div>
+      <div>Statut</div>
+      <div>Actions</div>
+    </div>
+
+    @for(elem of filtrerRendezVous(); track $index){
+    <div class="rdv-item {{elem.statut.toLowerCase().replace(' ', '-')}}">
+      <div>{{elem.date | date:'dd/MM/yyyy'}} - {{elem.date | date:'HH:mm'}}</div>
+      <div>{{getNomAnimal(elem.idAnimal)}}</div>
+      <div>{{getNomAdoptant(elem.idAdoptant)}}</div>
+      <div><span class="status-badge {{elem.statut.toLowerCase().replace(' ', '-')}}">{{elem.statut}}</span></div>
+      <div class="actions">
+        @if(elem.statut == "Confirmé"){
+          <button class="edit-btn" (click)="modifier(elem.id)"><i class="fas fa-edit"></i></button>
+          <button class="cancel-btn" (click)="changerStatut(elem.id, 'Annulé')"><i class="fas fa-times"></i></button>
+        }
+        @else if(elem.statut == "En attente"){
+          <button class="edit-btn" (click)="modifier(elem.id)"><i class="fas fa-edit"></i></button>
+          <button class="confirm-btn" (click)="changerStatut(elem.id, 'Confirmé')"><i class="fas fa-check"></i></button>
+          <button class="cancel-btn" (click)="changerStatut(elem.id, 'Annulé')"><i class="fas fa-times"></i></button>
+        }
+        @else {
+          <button class="edit-btn" (click)="modifier(elem.id)"><i class="fas fa-edit"></i></button>
+        }
+        <button class="delete-btn" (click)="supprimer(elem.id)"><i class="fas fa-trash"></i></button>
+      </div>
+    </div>
+    }
+  </div>
+
+  @if(afficherRendezVous){
+  <div id="add-form">
+    <h2><i class="fas fa-calendar-plus"></i> Nouveau Rendez-vous</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="ajouter">
+      <div class="form-group">
+        <label>Date :</label>
+        <input type="date" formControlName="date" required>
+      </div>
+      <div class="form-group">
+        <label>Heure :</label>
+        <input type="time" formControlName="time" required>
+      </div>
+      <div class="form-group">
+        <label>Animal :</label>
+        <select formControlName="idAnimal" required>
+          <option value="">Sélectionner un animal...</option>
+          @for(animal of animaux; track $index){
+          <option [value]="animal.id">{{animal.nom}}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Adoptant :</label>
+        <select formControlName="idAdoptant" required>
+          <option value="">Sélectionner un adoptant...</option>
+          @for(user of adoptants; track $index){
+          <option [value]="user.id">{{user.nom}} {{user.prenom}}</option>
+          }
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Statut :</label>
+        <select formControlName="statut" required>
+          <option value="En attente">En attente</option>
+          <option value="Confirmé">Confirmé</option>
+          <option value="Annulé">Annulé</option>
+        </select>
+      </div>
+      <div class="form-buttons">
+        <button type="button" id="cancel-add" (click)="annuler()">Annuler</button>
+        <button type="submit" [disabled]="!ajouter.valid">Enregistrer</button>
+      </div>
+    </form>
+  </div>
+  }
+</div>

@@ -1,17 +1,38 @@
 <div class="c1">
   <div class="logo">
-    <img src="logo.png" alt="logo"  style=" width: 150px;" >
+    <img src="logo.png" alt="logo" style="width: 150px;">
   </div>
   <nav>
-    <a routerLink="/home">Accueil</a>
-    <a href="#">Animaux</a>
-    <a href="#">Contact</a>
-    @if(!isLoggedIn){
-    <a routerLink="/auth/login">Se connecter</a>
-    }
-    @else{
-    <a routerLink="/home" (click)="deconnecter()">Déconnexion</a>
+    <a routerLink="/home" routerLinkActive="active">Accueil</a>
+    <a routerLink="/Animaux" routerLinkActive="active">Animaux</a>
+    <a routerLink="/about" routerLinkActive="active">À propos</a>
 
+    @if (!isLoggedIn) {
+      <a routerLink="/auth/login">Se connecter</a>
+    } @else {
+      <div class="user-menu">
+        <button (click)="toggleMenu()">
+          <i class="fas fa-user-circle"></i> {{ utilisateur.prenom }}
+        </button>
+
+        @if (showMenu) {
+          <div class="dropdown-content">
+            <div class="user-info">
+              <i class="fas fa-user-circle"></i>
+              <div>
+                <strong>{{ utilisateur.prenom }} {{ utilisateur.nom }}</strong>
+                <small>{{ utilisateur.email }}</small>
+              </div>
+            </div>
+            <button (click)="navigateToDemandes()"><i class="fas fa-file-alt"></i> Mes demandes</button>
+            <button (click)="changer()" ><i class="fas fa-key"></i> Changer mot de passe</button>
+            <button type="button" (click)="navigateToUpdates()"><i class="fas fa-file-alt"></i>  mes publications</button>
+
+            <div class="divider"></div>
+            <a class="logout" (click)="deconnecter()"><i class="fas fa-sign-out-alt"></i> Déconnexion</a>
+          </div>
+        }
+      </div>
     }
   </nav>
 </div>

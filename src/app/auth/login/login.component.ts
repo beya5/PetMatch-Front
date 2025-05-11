@@ -13,6 +13,7 @@ export class LoginComponent {
   loginForm!: FormGroup ;
   readonly fb: FormBuilder = inject(FormBuilder)
   UserId!:number;
+  userRole!:string;
   activatedRoute:ActivatedRoute=inject(ActivatedRoute);
  service:UserService=inject(UserService)
     router: Router=inject(Router);
@@ -43,6 +44,8 @@ export class LoginComponent {
 
             console.log('Connexion réussie !', data);
             this.UserId = data[0].id;
+            this.userRole = data[0].role;
+            this.service.setCurrentUserId( data[0].id);
             this.redirectAfterLogin();
           },
           error: (err) => console.error('Erreur lors de la connexion :', err)
@@ -52,20 +55,21 @@ export class LoginComponent {
       private redirectAfterLogin() {
         const returnUrl = this.activatedRoute.snapshot.queryParams['returnUrl'];
         const animalId = this.activatedRoute.snapshot.queryParams['animalId'];
-
+        if (this.userRole === 'admin') {
+          this.router.navigate(['/admin']);
+          return;
+        }
         if (!returnUrl) {
           this.router.navigate(['/home', this.UserId]);
           return;
         }
 
-        // Cas spécifique pour le formulaire
         if (returnUrl.includes('formulaires')) {
           const navExtras = animalId ? { queryParams: { animalId } } : {};
           this.router.navigate(['/home', this.UserId, 'formulaires'], navExtras);
           return;
         }
 
-        // Redirection générale
         this.router.navigateByUrl(returnUrl).catch(() => {
           this.router.navigate(['/home', this.UserId]); // Fallback
         });

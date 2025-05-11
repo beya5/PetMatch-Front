@@ -1,0 +1,251 @@
+<div class="container py-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <div class="d-flex justify-content-between align-items-center">
+        <h2 class="h5 mb-0">
+          <i class="fas fa-cat me-2"></i>Modifier un chat
+        </h2>
+        <button class="btn btn-sm btn-light" (click)="onCancel()" [disabled]="isLoading">
+          <i class="fas fa-times me-1"></i> Fermer
+        </button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <!-- Message d'état -->
+      @if (message) {
+        <div class="alert alert-dismissible fade show"
+             [class.alert-success]="message.includes('succès')"
+             [class.alert-danger]="!message.includes('succès')">
+          {{ message }}
+          <button type="button" class="btn-close" (click)="message = ''"></button>
+        </div>
+      }
+
+      <!-- Chargement -->
+      @if (isLoading && !catForm.controls['nom']) {
+        <div class="text-center py-5">
+          <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="visually-hidden">Chargement...</span>
+          </div>
+          <p class="mt-3">Chargement des données du chat...</p>
+        </div>
+      }
+
+      <!-- Formulaire -->
+      @if (catForm.controls['nom']) {
+        <form (ngSubmit)="onSubmit()" [formGroup]="catForm" class="needs-validation" novalidate>
+          <div class="row g-3">
+            <!-- Section Informations de base -->
+            <div class="col-12">
+              <h5 class="border-bottom pb-2 mb-3">
+                <i class="fas fa-info-circle me-2"></i>Informations de base
+              </h5>
+            </div>
+
+            <!-- Nom -->
+            <div class="col-md-6">
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="nom" formControlName="nom"
+                     [class.is-invalid]="catForm.get('nom')?.invalid && catForm.get('nom')?.touched">
+              @if (catForm.get('nom')?.invalid && catForm.get('nom')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('nom')?.errors?.['required']) { Le nom est requis }
+                  @if (catForm.get('nom')?.errors?.['minlength']) { Minimum 2 caractères }
+                  @if (catForm.get('nom')?.errors?.['maxlength']) { Maximum 50 caractères }
+                </div>
+              }
+            </div>
+
+            <!-- Race -->
+            <div class="col-md-6">
+              <label for="race" class="form-label">Race</label>
+              <input type="text" class="form-control" id="race" formControlName="race"
+                     [class.is-invalid]="catForm.get('race')?.invalid && catForm.get('race')?.touched">
+              @if (catForm.get('race')?.invalid && catForm.get('race')?.touched) {
+                <div class="invalid-feedback">
+                  La race est requise
+                </div>
+              }
+            </div>
+
+            <!-- Âge -->
+            <div class="col-md-4">
+              <label for="age" class="form-label">Âge</label>
+              <input type="text" class="form-control" id="age" formControlName="age" placeholder="Ex: 2 ans ou 6 mois"
+                     [class.is-invalid]="catForm.get('age')?.invalid && catForm.get('age')?.touched">
+              @if (catForm.get('age')?.invalid && catForm.get('age')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('age')?.errors?.['required']) { L'âge est requis }
+                  @if (catForm.get('age')?.errors?.['pattern']) { Format: "2 ans" ou "6 mois" }
+                </div>
+              }
+            </div>
+
+            <!-- Sexe -->
+            <div class="col-md-4">
+              <label for="sexe" class="form-label">Sexe</label>
+              <select class="form-select" id="sexe" formControlName="sexe"
+                      [class.is-invalid]="catForm.get('sexe')?.invalid && catForm.get('sexe')?.touched">
+                <option value="">Sélectionner...</option>
+                <option value="Mâle">Mâle</option>
+                <option value="Femelle">Femelle</option>
+              </select>
+              @if (catForm.get('sexe')?.invalid && catForm.get('sexe')?.touched) {
+                <div class="invalid-feedback">
+                  Le sexe est requis
+                </div>
+              }
+            </div>
+
+            <!-- Statut -->
+            <div class="col-md-4">
+              <label for="statut" class="form-label">Statut</label>
+              <select class="form-select" id="statut" formControlName="statut"
+                      [class.is-invalid]="catForm.get('statut')?.invalid && catForm.get('statut')?.touched">
+                <option value="Disponible">Disponible</option>
+                <option value="Réservé">Réservé</option>
+                <option value="Adopté">Adopté</option>
+                <option value="Indisponible">Indisponible</option>
+              </select>
+            </div>
+
+            <!-- Section Caractéristiques physiques -->
+            <div class="col-12 mt-4">
+              <h5 class="border-bottom pb-2 mb-3">
+                <i class="fas fa-ruler-combined me-2"></i>Caractéristiques physiques
+              </h5>
+            </div>
+
+            <!-- Taille -->
+            <div class="col-md-6">
+              <label for="taille" class="form-label">Taille</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="taille" formControlName="taille"
+                       [class.is-invalid]="catForm.get('taille')?.invalid && catForm.get('taille')?.touched">
+                <span class="input-group-text">cm</span>
+              </div>
+              @if (catForm.get('taille')?.invalid && catForm.get('taille')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('taille')?.errors?.['required']) { La taille est requise }
+                  @if (catForm.get('taille')?.errors?.['pattern']) { Format numérique suivi de "cm" }
+                </div>
+              }
+            </div>
+
+            <!-- Poids -->
+            <div class="col-md-6">
+              <label for="poids" class="form-label">Poids</label>
+              <div class="input-group">
+                <input type="text" class="form-control" id="poids" formControlName="poids"
+                       [class.is-invalid]="catForm.get('poids')?.invalid && catForm.get('poids')?.touched">
+                <span class="input-group-text">kg</span>
+              </div>
+              @if (catForm.get('poids')?.invalid && catForm.get('poids')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('poids')?.errors?.['required']) { Le poids est requis }
+                  @if (catForm.get('poids')?.errors?.['pattern']) { Format numérique (ex: 4.2 kg) }
+                </div>
+              }
+            </div>
+
+            <!-- Dents -->
+            <div class="col-md-6">
+              <label for="dents" class="form-label">État des dents</label>
+              <select class="form-select" id="dents" formControlName="dents">
+                <option value="Dents saines">Dents saines</option>
+                <option value="Problèmes mineurs">Problèmes mineurs</option>
+                <option value="Soins dentaires nécessaires">Soins dentaires nécessaires</option>
+              </select>
+            </div>
+
+            <!-- Stérilisé -->
+            <div class="col-md-6">
+              <div class="form-check form-switch pt-4">
+                <input class="form-check-input" type="checkbox" id="sterilise" formControlName="sterilise">
+                <label class="form-check-label" for="sterilise">Stérilisé</label>
+              </div>
+            </div>
+
+            <!-- Section Santé -->
+            <div class="col-12 mt-4">
+              <h5 class="border-bottom pb-2 mb-3">
+                <i class="fas fa-heartbeat me-2"></i>Santé
+              </h5>
+            </div>
+
+            <!-- Vaccins -->
+            <div class="col-12">
+              <label for="vaccin" class="form-label">Vaccins</label>
+              <textarea class="form-control" id="vaccin" formControlName="vaccin" rows="2"
+                        placeholder="Liste des vaccins reçus..."></textarea>
+            </div>
+
+            <!-- Section Description -->
+            <div class="col-12 mt-4">
+              <h5 class="border-bottom pb-2 mb-3">
+                <i class="fas fa-align-left me-2"></i>Description
+              </h5>
+            </div>
+
+            <!-- Description -->
+            <div class="col-12">
+              <label for="description" class="form-label">Description complète</label>
+              <textarea class="form-control" id="description" formControlName="description" rows="4"
+                        [class.is-invalid]="catForm.get('description')?.invalid && catForm.get('description')?.touched"></textarea>
+              @if (catForm.get('description')?.invalid && catForm.get('description')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('description')?.errors?.['required']) { La description est requise }
+                  @if (catForm.get('description')?.errors?.['minlength']) { Minimum 20 caractères }
+                  @if (catForm.get('description')?.errors?.['maxlength']) { Maximum 500 caractères }
+                </div>
+              }
+            </div>
+
+            <!-- Section Photo -->
+            <div class="col-12 mt-4">
+              <h5 class="border-bottom pb-2 mb-3">
+                <i class="fas fa-camera me-2"></i>Photo
+              </h5>
+            </div>
+
+            <!-- URL Photo -->
+            <div class="col-12">
+              <label for="photo" class="form-label">URL de la photo</label>
+              <input type="url" class="form-control" id="photo" formControlName="photoUrl"
+                     [class.is-invalid]="catForm.get('photo')?.invalid && catForm.get('photo')?.touched">
+              @if (catForm.get('photo')?.invalid && catForm.get('photo')?.touched) {
+                <div class="invalid-feedback">
+                  @if (catForm.get('photo')?.errors?.['required']) { L'URL de la photo est requise }
+                  @if (catForm.get('photo')?.errors?.['pattern']) { L'URL doit commencer par http:// ou https:// }
+                </div>
+              }
+              @if (catForm.get('photo')?.valid) {
+                <div class="mt-2">
+                  <img [src]="catForm.get('photo')?.value" alt="Photo du chat" class="img-thumbnail preview-image"
+                       onerror="this.style.display='none'">
+                </div>
+              }
+            </div>
+
+            <!-- Boutons de soumission -->
+            <div class="col-12 mt-4 pt-3 border-top">
+              <div class="d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-outline-secondary" (click)="onCancel()" [disabled]="isLoading">
+                  <i class="fas fa-times me-1"></i> Annuler
+                </button>
+                <button type="submit" class="btn btn-primary" [disabled]="isLoading || catForm.invalid">
+                  @if (isLoading) {
+                    <i class="fas fa-spinner fa-spin me-1"></i> Enregistrement...
+                  } @else {
+                    <i class="fas fa-save me-1"></i> Enregistrer
+                  }
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      }
+    </div>
+  </div>
+</div>

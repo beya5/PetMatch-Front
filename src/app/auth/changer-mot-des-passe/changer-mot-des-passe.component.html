@@ -1,0 +1,41 @@
+<div class="container" style="height:750px;">
+  <div class="login-card">
+      <div class="login-header">
+          <div class="logo">PETMATCH</div>
+          <div class="tagline">CHANGEZ VOTRE MOT DE PASSE</div>
+      </div>
+
+      <div class="login-body">
+          <form (ngSubmit)="onSubmit()" [formGroup]="passwordForm">
+              <div class="mb-3 position-relative">
+                  <i class="fas fa-lock paw-icon" style="top: 15px; left: 15px;"></i>
+                  <input type="password" class="form-control ps-5"
+                         placeholder="Ancien mot de passe"
+                         formControlName="oldPassword" required>
+              </div>
+
+              <div class="mb-3 position-relative">
+                  <i class="fas fa-key paw-icon" style="top: 15px; left: 15px;"></i>
+                  <input type="password" class="form-control ps-5"
+                         placeholder="Nouveau mot de passe"
+                         formControlName="newPassword" required>
+              </div>
+
+              <div class="mb-4 position-relative">
+                  <i class="fas fa-key paw-icon" style="top: 15px; left: 15px;"></i>
+                  <input type="password" class="form-control ps-5"
+                         placeholder="Confirmer le nouveau mot de passe"
+                         formControlName="confirmPassword" required>
+              </div>
+
+              <button type="submit" class="btn btn-login btn-success mb-3" [disabled]="!passwordForm.valid">
+                  <i class="fas fa-sync-alt me-2"></i> METTRE À JOUR
+              </button>
+
+              <div class="footer-links">
+                  <a routerLink="/profile" class="me-3">Retour au profil</a>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>

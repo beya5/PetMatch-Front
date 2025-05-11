@@ -9,6 +9,14 @@
       "role": "adoptant"
     },
     {
+      "id": "3",
+      "nom": "Ali",
+      "prenom": "Samir",
+      "email": "ali.benali@example.com",
+      "mdp": "refuge123",
+      "role": "admin"
+    },
+    {
       "id": "d81e",
       "nom": "khazri",
       "prenom": "syrine",
@@ -127,32 +135,26 @@
       "responsable": "moi",
       "motivation": "haya bjeh raby",
       "adoptantId": "d81e"
+    },
+    {
+      "id": "90ea",
+      "logement": "farm",
+      "statut": "tenant",
+      "surface": 100,
+      "children": true,
+      "seniors": false,
+      "animaux": 1,
+      "experience": "moderate",
+      "dejaAdopte": "yes",
+      "couts": "limited",
+      "engagement": "mostly_committed",
+      "temps": "1h",
+      "responsable": "111",
+      "motivation": "14",
+      "adoptantId": "d81e"
     }
   ],
   "ficheAnimaux": [
-    {
-      "id": "101",
-      "nom": "Bella",
-      "type": "Chien",
-      "race": "Labrador",
-      "age": "3 ans",
-      "sexe": "Femelle",
-      "taille": "60 cm",
-      "poids": "25 kg",
-      "photos": "Luna.jpeg",
-      "description": "Joueuse, idéale pour famille avec enfants",
-      "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2024-12-01",
-        "lieu": "Lyon (69)",
-        "tempsRefuge": "5 mois"
-      },
-      "sante": {
-        "vaccin": "CHPL, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
-    },
     {
       "id": "102",
       "nom": "Max",
@@ -165,39 +167,13 @@
       "photos": "Luna.jpeg",
       "description": "Protecteur et loyal, bon gardien",
       "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-01-10",
-        "lieu": "Nice (06)",
-        "tempsRefuge": "4 mois"
-      },
-      "sante": {
-        "vaccin": "CHPL, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
-    },
-    {
-      "id": "103",
-      "nom": "Mimi",
-      "type": "Chat",
-      "race": "Européen",
-      "age": "2 ans",
-      "sexe": "Femelle",
-      "taille": "45 cm",
-      "poids": "3.5 kg",
-      "photos": "Luna.jpeg",
-      "description": "Très affectueuse, aime les câlins",
-      "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-02-05",
-        "lieu": "Paris (75)",
-        "tempsRefuge": "3 mois"
-      },
-      "sante": {
-        "vaccin": "FVRCP, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
+      "dateArrivee": "2025-01-10",
+      "vaccin": "CHPL, rage",
+      "sterilise": true,
+      "dents": "Dents saines",
+      "statut": "Adopté",
+      "date": "2025-01-10",
+      "photo": "Luna.jpeg"
     },
     {
       "id": "104",
@@ -211,114 +187,71 @@
       "photos": "Luna.jpeg",
       "description": "Curieux et sociable",
       "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-02-10",
-        "lieu": "Marseille (13)",
-        "tempsRefuge": "3 mois"
-      },
-      "sante": {
-        "vaccin": "FVRCP, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
+      "dateArrivee": "2025-02-10",
+      "vaccin": "FVRCP, rage",
+      "sterilise": true,
+      "dents": "Dents saines"
     },
     {
       "id": "105",
-      "nom": "Luna",
+      "nom": "Tigrou",
       "type": "Chien",
-      "race": "Golden Retriever",
+      "race": "Bengal",
       "age": "4 ans",
-      "sexe": "Femelle",
-      "taille": "58 cm",
-      "poids": "28 kg",
+      "sexe": "Mâle",
+      "taille": "50 cm",
+      "poids": "4.8 kg",
       "photos": "Luna.jpeg",
-      "description": "Calme et obéissante, adore les enfants",
+      "description": "Très actif, aime jouer et grimper",
       "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-03-01",
-        "lieu": "Toulouse (31)",
-        "tempsRefuge": "2 mois"
-      },
-      "sante": {
-        "vaccin": "CHPL, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
+      "dateArrivee": "2024-11-20",
+      "vaccin": "FVRCP, rage",
+      "sterilise": true,
+      "dents": "Dents saines",
+      "statut": "Disponible",
+      "date": "2024-11-20",
+      "photo": "Luna.jpeg"
     },
     {
       "id": "106",
-      "nom": "Simba",
-      "type": "Chat",
-      "race": "Siamois",
-      "age": "2 ans",
+      "nom": "Rex",
+      "type": "Chien",
+      "race": "Golden Retriever",
+      "age": "6 ans",
       "sexe": "Mâle",
-      "taille": "50 cm",
-      "poids": "4.2 kg",
+      "taille": "60 cm",
+      "poids": "28 kg",
       "photos": "Luna.jpeg",
-      "description": "Très bavard et joueur",
+      "description": "Calme et affectueux, aime les balades",
       "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-03-05",
-        "lieu": "Paris (75)",
-        "tempsRefuge": "2 mois"
-      },
-      "sante": {
-        "vaccin": "FVRCP, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
+      "dateArrivee": "2025-01-15",
+      "vaccin": "CHPL, rage",
+      "sterilise": true,
+      "dents": "Dents saines"
     },
     {
       "id": "107",
-      "nom": "Rocky",
-      "type": "Chien",
-      "race": "Rottweiler",
-      "age": "6 ans",
-      "sexe": "Mâle",
-      "taille": "68 cm",
-      "poids": "40 kg",
-      "photos": "Luna.jpeg",
-      "description": "Fort et fidèle, bon chien de garde",
-      "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-04-01",
-        "lieu": "Lille (59)",
-        "tempsRefuge": "1 mois"
-      },
-      "sante": {
-        "vaccin": "CHPL, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
-    },
-    {
-      "id": "108",
-      "nom": "Nala",
+      "nom": "Luna",
       "type": "Chat",
-      "race": "Persan",
+      "race": "Siamois",
       "age": "3 ans",
       "sexe": "Femelle",
       "taille": "48 cm",
-      "poids": "3.8 kg",
+      "poids": "3.9 kg",
       "photos": "Luna.jpeg",
-      "description": "Très douce et tranquille",
+      "description": "Douce et calme, adore les coins ensoleillés",
       "statutAdoption": "Disponible",
-      "historique": {
-        "dateArrivee": "2025-04-05",
-        "lieu": "Nancy (54)",
-        "tempsRefuge": "1 mois"
-      },
-      "sante": {
-        "vaccin": "FVRCP, rage",
-        "sterilise": true,
-        "dents": "Dents saines"
-      }
+      "dateArrivee": "2025-02-20",
+      "vaccin": "FVRCP, rage",
+      "sterilise": true,
+      "dents": "Dents saines"
     }
   ],
   "publications": [
     {
       "id": "201",
       "ficheAnimalId": 101,
+      "adoptantId": 1,
       "typeNotification": "Annonce adoption",
       "contenu": "Bella cherche une famille",
       "dateEnvoi": "2025-04-15",
@@ -327,6 +260,7 @@
     {
       "id": "202",
       "ficheAnimalId": 102,
+      "adoptantId": 1,
       "typeNotification": "Annonce adoption",
       "contenu": "Max attend un maître sportif",
       "dateEnvoi": "2025-04-20",
@@ -335,6 +269,7 @@
     {
       "id": "203",
       "ficheAnimalId": 103,
+      "adoptantId": 1,
       "typeNotification": "Annonce adoption",
       "contenu": "Mimi, chatte douce à adopter",
       "dateEnvoi": "2025-04-25",
@@ -343,6 +278,7 @@
     {
       "id": "204",
       "ficheAnimalId": 104,
+      "adoptantId": 1,
       "typeNotification": "Annonce adoption",
       "contenu": "Tigrou, jeune Maine Coon curieux",
       "dateEnvoi": "2025-04-28",
@@ -351,6 +287,7 @@
     {
       "id": "205",
       "ficheAnimalId": 105,
+      "adoptantId": "d81e",
       "typeNotification": "Annonce adoption",
       "contenu": "Luna, une chienne douce et fidèle à adopter",
       "dateEnvoi": "2025-05-01",
@@ -359,6 +296,7 @@
     {
       "id": "206",
       "ficheAnimalId": 106,
+      "adoptantId": "d81e",
       "typeNotification": "Annonce adoption",
       "contenu": "Simba, un siamois bavard et mignon",
       "dateEnvoi": "2025-05-02",
@@ -367,17 +305,19 @@
     {
       "id": "207",
       "ficheAnimalId": 107,
+      "adoptantId": "d81e",
       "typeNotification": "Annonce adoption",
       "contenu": "Rocky, puissant et fidèle, attend sa famille",
       "dateEnvoi": "2025-05-03",
       "statut": "Publiée"
     },
     {
-      "id": "208",
-      "ficheAnimalId": 108,
+      "id": "8c82",
+      "ficheAnimalId": "102",
+      "contenu": "Luna, une chienne douce et fidèle à adopter",
       "typeNotification": "Annonce adoption",
-      "contenu": "Nala, persane douce, idéale en appartement",
-      "dateEnvoi": "2025-05-04",
+      "adoptantId": "d81e",
+      "dateEnvoi": "2025-05-10T22:25:19.208Z",
       "statut": "Publiée"
     }
   ],
@@ -395,13 +335,6 @@
       "ficheAnimalId": 102,
       "dateDemande": "2025-04-20",
       "statut": "Acceptée"
-    },
-    {
-      "id": "cf9c",
-      "adoptantId": "d81e",
-      "ficheAnimalId": 103,
-      "dateDemande": "2025-05-09",
-      "statut": "En attente"
     },
     {
       "id": "cf9c",
@@ -428,12 +361,24 @@
       "adoptantId": "d81e",
       "dateDemande": "2025-05-09",
       "statut": "En attente"
+    }
+  ],
+  "Rendez-vous": [
+    {
+      "date": "2025-05-12",
+      "time": "10:00",
+      "statut": "Confirmé",
+      "idAnimal": 1,
+      "idAdoptant": 101,
+      "id": "0cbe"
     },
     {
-      "id": "ccaa",
-      "adoptantId": "d81e",
-      "dateDemande": "2025-05-09",
-      "statut": "En attente"
+      "date": "2025-05-14",
+      "time": "09:00",
+      "statut": "Annulé",
+      "idAnimal": 3,
+      "idAdoptant": 103,
+      "id": "658f"
     }
   ]
 }

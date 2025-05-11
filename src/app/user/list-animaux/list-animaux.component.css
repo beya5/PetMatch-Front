@@ -123,6 +123,7 @@ select:focus {
   transition: transform 0.3s ease;
   height: 600px;
   position: relative;
+  max-width: 500px;
 }
 
 .animal-card:hover {

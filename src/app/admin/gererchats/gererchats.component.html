@@ -1,0 +1,47 @@
+<div class="container">
+        <div class="header">
+            <h1><i class="fas fa-cat"></i> Gestion des Chats</h1>
+            <button class="btn btn-add" (click)="openModal()">
+                <i class="fas fa-plus"></i> Ajouter un chat
+            </button>
+        </div>
+
+        <table id="dogsTable">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Race</th>
+                    <th>Âge</th>
+                    <th>Statut</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="dogsTableBody">
+              @for(animal of animaux; track $index){
+                <tr id="dogRow{{animal.id}}">
+                    <td>{{animal.nom}}</td>
+                    <td>
+                      {{animal.race}}
+                    </td>
+                    <td>{{animal.age}}</td>
+                    <td>
+                      {{animal.statutAdoption}}
+                    </td>
+                    <td>
+                      <img [src] ="animal.photoUrl" alt="Photo de {{animal.nom}}" class="dog-photo" style="width: 70px; height: 70px;">
+                    </td>
+                    <td>
+                        <button class="btn btn-edit" (click)="modifier(animal.id )">
+                            <i class="fas fa-edit"></i> Modifier
+                        </button>
+                        <button class="btn btn-delete" (click)="deleteDog(animal.id)">
+                            <i class="fas fa-trash"></i> Supprimer
+                        </button>
+                    </td>
+                  }
+
+         </tbody>
+        </table>
+    </div>
+

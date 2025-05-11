@@ -1,0 +1,104 @@
+
+    <div class="container">
+        <h1><i class="fas fa-cat"></i> Ajouter un chat</h1>
+
+        <div id="message" class="message"></div>
+
+        <form id="catForm"  (ngSubmit)="onSubmit()" [formGroup]="catForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="nom">Nom du chat</label>
+                    <input type="text" id="nom" formControlName="nom"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="race">Race</label>
+                    <select id="race" formControlName="race"  required>
+                        <option value="">Sélectionner...</option>
+                        <option value="Européen">Européen</option>
+                        <option value="Siamois">Siamois</option>
+                        <option value="Persan">Persan</option>
+                        <option value="Maine Coon">Maine Coon</option>
+                        <option value="Bengal">Bengal</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Âge</label>
+                    <input type="text" id="age" placeholder="Ex: 2 ans, 6 mois..." formControlName="age"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sexe">Sexe</label>
+                    <select id="sexe" formControlName="sexe"  required>
+                        <option value="">Sélectionner...</option>
+                        <option value="Mâle">Mâle</option>
+                        <option value="Femelle">Femelle</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="poids">Poids</label>
+                    <input type="text" id="poids" placeholder="Ex: 4.5 kg" formControlName="poids"  required>
+                </div>
+
+                <div class="cat-specific">
+
+                <div class="form-group">
+                    <label for="poids">taille</label>
+                    <input type="text" id="taille" placeholder="Ex: 55 cm" formControlName="taille"  required>
+                </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="statutAdoption">Statut d'adoption</label>
+                    <select id="statutAdoption" formControlName="staut"  required>
+                        <option value="Disponible">Disponible</option>
+                        <option value="Réservé">Réservé</option>
+                        <option value="Adopté">Adopté</option>
+                        <option value="En soin">En soin</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="dateArrivee">Date d'arrivée au refuge</label>
+                    <input type="date" id="dateArrivee" formControlName="date"  required>
+                </div>
+
+                <div class="form-group">
+                    <label for="vaccin">Vaccins</label>
+                    <input type="text" id="vaccin" placeholder="Ex: Typhus, Coryza, Rage..." formControlName="vaccin">
+                </div>
+
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="sterilise" formControlName="sterilise">
+                    <label for="sterilise">Stérilisé</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="dents">État des dents</label>
+                    <input type="text" id="dents" placeholder="Ex: Dents saines" formControlName="dents">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <textarea id="description" placeholder="Tempérament, comportement, particularités..."  formControlName="description" ></textarea>
+                </div>
+
+
+                <div class="photo-section">
+                    <label for="photo">Photo du chat</label>
+                     <input type="text" id="photo" formControlName="photoUrl"  placeholder="photo.jpg" required>
+                </div>
+
+                <div class="buttons">
+                    <button type="button" class="btn btn-cancel" id="cancelBtn">
+                        <i class="fas fa-times"></i> Annuler
+                    </button>
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-save"></i> Enregistrer le chat
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>

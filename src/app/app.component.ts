@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet,Router } from '@angular/router';
 import { NavComponent } from "./user/nav/nav.component";
 import { FooterComponent } from "./user/footer/footer.component";
+import { TokenInterceptor } from './interceptors/token.interceptor';
+
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, NavComponent, FooterComponent],
@@ -10,4 +12,10 @@ import { FooterComponent } from "./user/footer/footer.component";
 })
 export class AppComponent {
   title = 'petMatch';
+   showLayout = true;
+ router:Router = inject(Router);
+
+  isAdminRoute(): boolean {
+    return this.router.url.includes('admin');
+  }
 }
